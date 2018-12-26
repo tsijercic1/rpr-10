@@ -13,7 +13,7 @@ class GeografijaDAOTest {
     @Test
     void regenerateFile() {
         GeografijaDAO.removeInstance();
-        File dbfile = new File("resources/baza.db");
+        File dbfile = new File("baza.db");
         dbfile.delete();
         GeografijaDAO dao = GeografijaDAO.getInstance();
         ArrayList<Grad> gradovi = dao.gradovi();
@@ -23,8 +23,9 @@ class GeografijaDAOTest {
 
     @Test
     void glavniGrad() {
-        File file = new File("resources/baza.db");
-        file.delete();
+        GeografijaDAO.removeInstance();
+        File dbfile = new File("baza.db");
+        dbfile.delete();
         GeografijaDAO dao = GeografijaDAO.getInstance();
         Grad nepoznat = dao.glavniGrad("Bosna i Hercegovina");
         assertNull(nepoznat);
@@ -34,8 +35,9 @@ class GeografijaDAOTest {
 
     @Test
     void obrisiDrzavu() {
-        File file = new File("resources/baza.db");
-        file.delete();
+        GeografijaDAO.removeInstance();
+        File dbfile = new File("baza.db");
+        dbfile.delete();
         GeografijaDAO dao = GeografijaDAO.getInstance();
         // Nepostojeća država, neće se desiti ništa
         dao.obrisiDrzavu("Kina");
@@ -46,8 +48,9 @@ class GeografijaDAOTest {
 
     @Test
     void obrisiDrzavu2() {
-        File file = new File("resources/baza.db");
-        file.delete();
+        GeografijaDAO.removeInstance();
+        File dbfile = new File("baza.db");
+        dbfile.delete();
         GeografijaDAO dao = GeografijaDAO.getInstance();
 
         // Nema gradova Beč i Graz koji su iz austrije
@@ -62,8 +65,9 @@ class GeografijaDAOTest {
 
     @Test
     void dodajGrad() {
-        File file = new File("resources/baza.db");
-        file.delete();
+        GeografijaDAO.removeInstance();
+        File dbfile = new File("baza.db");
+        dbfile.delete();
         GeografijaDAO dao = GeografijaDAO.getInstance();
         Drzava francuska = dao.nadjiDrzavu("Francuska");
         Grad grad = new Grad();
@@ -79,7 +83,9 @@ class GeografijaDAOTest {
 
     @Test
     void dodajDrzavu() {
-        GeografijaDAO dao = GeografijaDAO.getInstance();
+        GeografijaDAO.removeInstance();
+        File dbfile = new File("baza.db");
+        dbfile.delete();
         Grad sarajevo = new Grad();
         sarajevo.setNaziv("Sarajevo");
         sarajevo.setBrojStanovnika(500000);
@@ -88,7 +94,7 @@ class GeografijaDAOTest {
         bih.setGlavniGrad(sarajevo);
         sarajevo.setDrzava(bih);
 
-        dao = GeografijaDAO.getInstance();
+        GeografijaDAO dao = GeografijaDAO.getInstance();
         dao.dodajDrzavu(bih);
         dao.dodajGrad(sarajevo);
 
@@ -101,8 +107,9 @@ class GeografijaDAOTest {
 
     @Test
     void izmijeniGrad() {
-        File file = new File("resources/baza.db");
-        file.delete();
+        GeografijaDAO.removeInstance();
+        File dbfile = new File("baza.db");
+        dbfile.delete();
         GeografijaDAO dao = GeografijaDAO.getInstance();
         Grad bech = dao.glavniGrad("Austrija");
         bech.setNaziv("Vienna");

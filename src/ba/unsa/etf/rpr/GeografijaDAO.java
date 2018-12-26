@@ -19,20 +19,22 @@ public class GeografijaDAO {
     private static PreparedStatement deleteGradByDrzavaId = null;
     private static PreparedStatement deleteDrzavaByNaziv = null;
     private static PreparedStatement editGrad = null;
+
     private GeografijaDAO(){
         connection = null;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:resources/baza.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:baza.db");
 
             Statement statement = null;
             try{
                 statement = connection.createStatement();
-                statement.execute("select * from drzava");
+                statement.execute("select id from drzava");
 
             }catch (Exception e){
                 try{
                     Statement statement2=null;
                     statement2 = connection.createStatement();
+//                    connection.setAutoCommit(false);
                     statement2.execute("CREATE TABLE grad(id integer primary key, naziv varchar(255), broj_stanovnika integer)");
                     statement2.execute("CREATE TABLE drzava(id integer primary key, naziv varchar(255), glavni_grad integer unique references grad(id))");
                     statement2.execute("ALTER TABLE grad ADD drzava integer references drzava(id)");
@@ -259,10 +261,12 @@ public class GeografijaDAO {
     }
 
     public static void removeInstance() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if(instance!=null){
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         instance = null;
     }

@@ -8,7 +8,7 @@ class MainTest {
 
     @org.junit.jupiter.api.Test
     void ispisiGradove() {
-        File file = new File("resources/baza.db");
+        File file = new File("baza.db");
         file.delete();
         String result = Main.ispisiGradove();
         String expected = "London (Velika Britanija) - 8825000\n" +
