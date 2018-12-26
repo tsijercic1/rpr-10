@@ -23,5 +23,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="ojdbc6-12.1.0.2" level="project" />
+    <orderEntry type="library" name="net.sf.jasperreports:jasperreports:6.7.0" level="project" />
   </component>
 </module>
