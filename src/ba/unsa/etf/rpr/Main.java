@@ -1,40 +1,28 @@
 package ba.unsa.etf.rpr;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class Main {
+import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
+
+public class Main extends Application{
+
 
     private static GeografijaDAO baza;
-    public static void main(String[] args) throws SQLException {
-
-        baza = GeografijaDAO.getInstance();
-        System.out.println(ispisiGradove());
-//        System.out.println(baza);
-//        System.out.println(ispisiGradove());
-//        Grad sarajevo = new Grad();
-//        sarajevo.setNaziv("Sarajevo");
-//        sarajevo.setBrojStanovnika(500000);
-//        Drzava bih = new Drzava();
-//        bih.setNaziv("Bosna i Hercegovina");
-//        bih.setGlavniGrad(sarajevo);
-//        sarajevo.setDrzava(bih);
-//
-//        GeografijaDAO dao = GeografijaDAO.getInstance();
-//        dao.dodajDrzavu(bih);
-//
-//        dao.dodajGrad(sarajevo);
-//
-//        // Provjera
-//        Grad proba = dao.glavniGrad("Bosna i Hercegovina");
-//        System.out.println(proba);
-//
-//        glavniGrad();
-
+    public static void main(String[] args) {
+        launch(args);
     }
 
     private static void glavniGrad() {
@@ -58,5 +46,17 @@ public class Main {
         }
         return res.toString();
 
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Locale.setDefault(new Locale("bs","BA"));
+        ResourceBundle bundle = ResourceBundle.getBundle("Translation");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("prozor.fxml"), bundle);
+        Parent root = loader.load();
+        primaryStage.setTitle("Države i gradovi");
+        primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+
+        primaryStage.show();
     }
 }
