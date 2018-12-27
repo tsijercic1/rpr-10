@@ -47,35 +47,35 @@
             </MenuBar>
             <HBox spacing="4.0">
                <children>
-                  <Button mnemonicParsing="false" text="%ucitaj">
+                  <Button mnemonicParsing="false" text="%ucitaj" onAction="#load">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%dodajGrad">
+                  <Button mnemonicParsing="false" text="%dodajGrad" onAction="#addCity">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%izmijeniGrad">
+                  <Button mnemonicParsing="false" text="%izmijeniGrad" onAction="#editCity">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%dodajDrzavu">
+                  <Button mnemonicParsing="false" text="%dodajDrzavu" onAction="#addCountry">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%izbrisiDrzavu">
+                  <Button mnemonicParsing="false" text="%izbrisiDrzavu" onAction="#deleteCountry">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -97,7 +97,7 @@
       </VBox>
    </top>
    <center>
-      <ListView BorderPane.alignment="CENTER">
+      <ListView fx:id="lista" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>

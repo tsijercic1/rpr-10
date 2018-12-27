@@ -1,3 +1,5 @@
+package ba.unsa.etf.rpr;
+
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.swing.JRViewer;
 
@@ -6,15 +8,22 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PrintReport extends JFrame {
+public class GradoviReport extends JFrame {
+
+    public void saveAs(String format){
+
+    }
+
     public void showReport(Connection conn) throws JRException {
-        String reportSrcFile = getClass().getResource("/reports/biblioteka.jrxml").getFile();
+        String reportSrcFile = getClass().getResource("/reports/gradovi.jrxml").getFile();
         String reportsDir = getClass().getResource("/reports/").getFile();
 
         JasperReport jasperReport = JasperCompileManager.compileReport(reportSrcFile);
         // Fields for resources path
         HashMap<String, Object> parameters = new HashMap<String, Object>();
+
         parameters.put("reportsDirPath", reportsDir);
+        parameters.forEach((m,n)-> System.out.println(m+"  "+n));
         ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
         list.add(parameters);
         JasperPrint print = JasperFillManager.fillReport(jasperReport, parameters, conn);

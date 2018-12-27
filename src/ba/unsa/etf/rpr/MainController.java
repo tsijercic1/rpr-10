@@ -5,8 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,9 +19,17 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class MainController implements Initializable {
     public BorderPane pane;
+    public ListView lista;
+    private GeografijaDAO baza ;
 
     public MainController() {
-
+        baza = GeografijaDAO.getInstance();
+//        GradoviReport report = new GradoviReport();
+//        try {
+//            report.showReport(GeografijaDAO.getConnection());
+//        } catch (JRException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
@@ -44,6 +54,9 @@ public class MainController implements Initializable {
         primaryStage.setMinHeight(480);
     }
 
+    private void refreshList(){
+
+    }
 
     public void setBa(ActionEvent actionEvent) {
         selectLanguage(new Locale("bs","BA"));
@@ -59,5 +72,25 @@ public class MainController implements Initializable {
 
     public void setFr(ActionEvent actionEvent) {
         selectLanguage(new Locale("fr","FR"));
+    }
+
+    public void deleteCountry(ActionEvent actionEvent) {
+
+    }
+
+    public void addCountry(ActionEvent actionEvent) {
+
+    }
+
+    public void editCity(ActionEvent actionEvent) {
+
+    }
+
+    public void addCity(ActionEvent actionEvent) {
+
+    }
+
+    public void load(ActionEvent actionEvent) {
+
     }
 }

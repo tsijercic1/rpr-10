@@ -6,11 +6,13 @@ import java.util.Comparator;
 
 public class GeografijaDAO {
     private static GeografijaDAO instance;
+
     private static Connection connection;
+
     private static int lastGrad;
     private static int lastDrzava;
-
     private static PreparedStatement ubaci_drzavu = null;
+
     private static PreparedStatement ubaci_grad = null;
     private static PreparedStatement gradByNaziv = null;
     private static PreparedStatement gradById = null;
@@ -19,7 +21,6 @@ public class GeografijaDAO {
     private static PreparedStatement deleteGradByDrzavaId = null;
     private static PreparedStatement deleteDrzavaByNaziv = null;
     private static PreparedStatement editGrad = null;
-
     private GeografijaDAO(){
         connection = null;
         try {
@@ -66,6 +67,10 @@ public class GeografijaDAO {
 
         } catch (SQLException e) {
         }
+    }
+
+    public static Connection getConnection() {
+        return connection;
     }
 
     private static void initialize(){

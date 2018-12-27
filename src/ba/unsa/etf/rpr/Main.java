@@ -56,7 +56,7 @@ public class Main extends Application{
         Parent root = loader.load();
         primaryStage.setTitle("Države i gradovi");
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-
         primaryStage.show();
+
     }
 }

@@ -8,9 +8,16 @@
     <file url="file://$PROJECT_DIR$/resources/Translation_fr_FR.properties" />
     <custom-resource-bundle>
       <file value="file://$PROJECT_DIR$/resources/Translation.properties" />
-      <file value="file://$PROJECT_DIR$/resources/Translation_DE.properties" />
       <file value="file://$PROJECT_DIR$/resources/Translation_US.properties" />
       <file value="file://$PROJECT_DIR$/resources/Translation_bs_BA.properties" />
+      <file value="file://$PROJECT_DIR$/resources/Translation_fr_FR.properties" />
+      <base-name>Translation</base-name>
+    </custom-resource-bundle>
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/resources/Translation.properties" />
+      <file value="file://$PROJECT_DIR$/resources/Translation_US.properties" />
+      <file value="file://$PROJECT_DIR$/resources/Translation_bs_BA.properties" />
+      <file value="file://$PROJECT_DIR$/resources/Translation_de_DE.properties" />
       <file value="file://$PROJECT_DIR$/resources/Translation_fr_FR.properties" />
       <base-name>Translation</base-name>
     </custom-resource-bundle>
