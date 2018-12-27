@@ -50,8 +50,7 @@ public class MainController implements Initializable {
             return;
         }
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-        primaryStage.setMinWidth(640);
-        primaryStage.setMinHeight(480);
+
     }
 
     private void refreshList(){
