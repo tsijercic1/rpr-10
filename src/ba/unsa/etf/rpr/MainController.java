@@ -24,12 +24,7 @@ public class MainController implements Initializable {
 
     public MainController() {
         baza = GeografijaDAO.getInstance();
-        GradoviReport report = new GradoviReport();
-        try {
-            report.showReport(GeografijaDAO.getConnection());
-        } catch (JRException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
@@ -91,5 +86,13 @@ public class MainController implements Initializable {
 
     public void loadCity(ActionEvent actionEvent) {
 
+    }
+    public void print(ActionEvent actionEvent){
+        GradoviReport report = new GradoviReport();
+        try {
+            report.showReport(GeografijaDAO.getConnection());
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
     }
 }

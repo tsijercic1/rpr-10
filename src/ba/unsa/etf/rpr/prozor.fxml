@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.MainController">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -23,6 +23,7 @@
                   <Menu mnemonicParsing="false" text="File">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#print" text="Print" />
                      </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="%pogled">
@@ -47,35 +48,35 @@
             </MenuBar>
             <HBox spacing="4.0">
                <children>
-                  <Button mnemonicParsing="false" text="%ucitaj" onAction="#loadCity">
+                  <Button mnemonicParsing="false" onAction="#loadCity" text="%ucitaj">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%dodajGrad" onAction="#addCity">
+                  <Button mnemonicParsing="false" onAction="#addCity" text="%dodajGrad">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%izmijeniGrad" onAction="#editCity">
+                  <Button mnemonicParsing="false" onAction="#editCity" text="%izmijeniGrad">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%dodajDrzavu" onAction="#addCountry">
+                  <Button mnemonicParsing="false" onAction="#addCountry" text="%dodajDrzavu">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></Button>
-                  <Button mnemonicParsing="false" text="%izbrisiDrzavu" onAction="#deleteCountry">
+                  <Button mnemonicParsing="false" onAction="#deleteCountry" text="%izbrisiDrzavu">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>

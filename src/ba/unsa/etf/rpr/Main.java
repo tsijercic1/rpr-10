@@ -55,7 +55,7 @@ public class Main extends Application{
         Locale.setDefault(new Locale("bs","BA"));
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("prozor.fxml"), bundle);
-        loader.setController(new MainController());
+//        loader.setController(new MainController());
         Parent root = loader.load();
         primaryStage.setTitle("Države i gradovi");
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
